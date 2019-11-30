@@ -694,13 +694,13 @@ public class PhoneStatusBarPolicy
             }
             switch (item.getPrivacyType()) {
                 case TYPE_CAMERA:
-                    showCamera = true;
+                    showCamera = false;
                     break;
                 case TYPE_LOCATION:
-                    showLocation = true;
+                    showLocation = false;
                     break;
                 case TYPE_MICROPHONE:
-                    showMicrophone = true;
+                    showMicrophone = false;
                     break;
             }
         }
