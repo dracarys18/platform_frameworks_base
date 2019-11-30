@@ -77,6 +77,7 @@ public class MobileSignalController extends SignalController<
     private SignalStrength mSignalStrength;
     private MobileIconGroup mDefaultIcons;
     private Config mConfig;
+    private boolean mDataDisabledIcon = false;
     @VisibleForTesting
     boolean mInflateSignalStrengths = false;
     // Some specific carriers have 5GE network which is special LTE CA network.
@@ -501,7 +502,7 @@ public class MobileSignalController extends SignalController<
             if (mSubscriptionInfo.getSubscriptionId()
                     != mDefaults.getDefaultDataSubId()) {
                 mCurrentState.iconGroup = TelephonyIcons.NOT_DEFAULT_DATA;
-            } else {
+            } else if(mDataDisabledIcon) {
                 mCurrentState.iconGroup = TelephonyIcons.DATA_DISABLED;
             }
         }
